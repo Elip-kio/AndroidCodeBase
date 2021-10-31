@@ -1,8 +1,6 @@
-package io.kio.android.android.codebase.core
+package io.kio.android.codebase.core
 
 import android.app.Application
-import java.lang.IllegalStateException
-import java.lang.UnsupportedOperationException
 
 class ApplicationRegistry<T : Application> private constructor(private val app: T) {
 
@@ -21,6 +19,7 @@ class ApplicationRegistry<T : Application> private constructor(private val app: 
             if (instance != null) throw UnsupportedOperationException("ApplicationRegistry has been already initialized!")
             synchronized(ApplicationRegistry::class.java) {
                 instance = ApplicationRegistry(application)
+                PluginRegistry.notifyPlugins()
             }
         }
 

@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 rootProject.name = "AndroidCodebase"
 include ':app'
 include ':andriod-codebase-core'
+include ':android-codebase-network'
