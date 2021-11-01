@@ -1,4 +1,4 @@
-package io.kio.android.android.codebase.core
+package io.kio.android.codebase.core
 
 import android.app.Application
 import java.lang.IllegalStateException
